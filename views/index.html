@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css"></link>
+  </head>
+  <body>
+    <div id="splashScreen" class="splashScreen" onmousemove="gone()">
+      <p id="splashTitle"> .diaz </p>
+    </div>
+    <!-- <video id="vid" poster="images/woody.png" autoplay="true" loop="true" muted="muted">
+      <source src="videos/toyStoryClip.mp4" type="video/mp4">
+      <source src="videos/toyStoryClip.webm" type="video/webm">
+    </video> -->
+    <div id="synthBlock">
+      <h1> .Diaz Sequencer v1.0</h1>
+      <div id="drumPads">
+        <h3> drums </h3>
+        <table>
+          <!-- BASS DRUM PADS -->
+          <tr>
+            <td>
+              <div class="drumPad" id=bass0 data-index=0 data-value="0" onclick="clickDrum(this.id)"></div>
+            </td>
+            <td>
+              <div class="drumPad" id=bass1 data-index=1 data-value="0" onclick="clickDrum(this.id)"></div>
+            </td>
+            <td>
+              <div class="drumPad" id=bass2 data-index=2 data-value="0" onclick="clickDrum(this.id)"></div>
+            </td>
+            <td>
+              <div class="drumPad" id=bass3 data-index=3 data-value="0" onclick="clickDrum(this.id)"></div>
+            </td>
+          </tr>
+
+          <!-- SNARE DRUM PADS -->
+          <tr>
+            <td>
+              <div class="drumPad" id=snare0 data-index=0 data-value="0" onclick="clickDrum(this.id)"></div>
+            </td>
+            <td>
+              <div class="drumPad" id=snare1 data-index=1 data-value="0" onclick="clickDrum(this.id)"></div>
+            </td>
+            <td>
+              <div class="drumPad" id=snare2 data-index=2 data-value="0" onclick="clickDrum(this.id)"></div>
+            </td>
+            <td>
+              <div class="drumPad" id=snare3 data-index=3 data-value="0" onclick="clickDrum(this.id)"></div>
+            </td>
+          </tr>
+
+          <!-- Hi-Hat DRUM PADS -->
+          <tr>
+            <td>
+              <div class="drumPad" id=hh0 data-index=0 data-value="0" onclick="clickDrum(this.id)"></div>
+            </td>
+            <td>
+              <div class="drumPad" id=hh1 data-index=1 data-value="0" onclick="clickDrum(this.id)"></div>
+            </td>
+            <td>
+              <div class="drumPad" id=hh2 data-index=2 data-value="0" onclick="clickDrum(this.id)"></div>
+            </td>
+            <td>
+              <div class="drumPad" id=hh3 data-index=3 data-value="0" onclick="clickDrum(this.id)"></div>
+            </td>
+          </tr>
+        </table>
+        <div>
+          <button class="synthButton" id="playButton" data-status="play"> > </button>
+        </div>
+      </div>
+      <div id="synth">
+        <h3> synth </h3>
+        <div class="sliderContainer">
+          <div class="synthImg" id="sineImg">
+            <img src="images/circle.png" width="30px" height=="30px"> </img>
+          </div>
+          <div class="synthSlider" id="synthSlider">
+            <input class="synthInput" id="sineSlider" type="range" value="0" min="0" max="100" oninput="updateSliderSine(this.value)"><br>
+          </div>
+        </div>
+        <div class="sliderContainer">
+          <div class="synthImg" id="sineImg">
+            <img src="images/square.png" width="30px" height=="30px"> </img>
+          </div>
+          <div class="synthSlider" id="synthSlider">
+            <input class="synthInput" id="squareSlider" type="range" value="0" min="0" max="100" oninput="updateSliderSqr(this.value)"><br>
+          </div>
+        </div>
+        <div class="sliderContainer">
+          <div class="synthImg" id="sineImg">
+            <img src="images/triangle.png" width="30px" height=="30px"> </img>
+          </div>
+          <div class="synthSlider" id="synthSlider">
+            <input class="synthInput"
+            id="sawtoothSlider" type="range" value="0" min="0" max="100" oninput="updateSlidersTooth(this.value)"><br>
+          </div>
+        </div>
+        <div>
+          <button class="synthButton" id="" onclick="randomize()"> ? </button>
+        </div>
+      </div>
+      <div id="synthVolume">
+        <input id="volSlider" type="range" orient="vertical" value=".1" min="0" max="1" step="0.01" oninput="updateVol(this.value)">
+        <div id="volumeTextContainer">
+          <p id="volumeText"> .10 </p>
+        </div>
+      </div>
+      <div id="fx">
+        <h3> delay </h3>
+        <button class="synthButton" onclick="startDelay()"> ~~ </button>
+        <button class="synthButton" onclick="stopDelay()"> -- </button>
+        <div>
+          <h3> tempo </h3>
+          <input id="tempoSlider" type="range" min="33" max="220" step="1" value="120" oninput="updateTempo(this.value)"></input>
+          <p id="tempo">120</p>
+        </div>
+      </div>
+    </div> <!-- end of the container that holds the entire synth-->
+    <script type="text/javascript" src="javascripts/parallax.js" charset="utf-8"></script>
+    <script type="text/javascript" src="javascripts/tone.js" charset="utf-8"></script>
+  </body>
+</html>
